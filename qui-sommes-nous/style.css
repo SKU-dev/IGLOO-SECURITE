@@ -1,0 +1,22 @@
+  section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 170px;
+    margin-right: 170px;
+  }
+  h1 {
+    font-size: 80px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+  .blockHistory {
+    display: flex;
+  }
+  h4 {
+    margin: 20px;
+  }
+  .blocktxt{
+    border-left: 2px solid #323232;
+    padding: 150px;
+  }

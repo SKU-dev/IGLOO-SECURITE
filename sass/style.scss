@@ -1,0 +1,114 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+}
+
+
+// base des variables
+
+$base-txt: rgba(50, 50, 50, 1);
+
+// menu
+
+header {
+    padding: 25px;
+    display: flex;
+    border-bottom: 6px $base-txt solid;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        max-width: 125px;
+        object-fit: cover;
+        background-repeat: no-repeat; }
+            ul {
+                display: flex; 
+                margin-right: 50px;}
+                    a {
+                        text-decoration: none; 
+                        color: $base-txt;
+                        list-style-type: none;
+                        margin-left: 50px;
+                        padding: 5px;
+                        border-top: 1px solid white;
+                        border-bottom: 1px solid white;}
+                            a:hover {
+                                border-top: 1px solid $base-txt;
+                                border-bottom: 1px solid $base-txt; }
+                                li {
+                                    font-family: Georgia, 'Times New Roman', Times, serif;
+                                }
+}
+
+// presentation de l'entreprise
+
+.lineSeparation {
+    height: 250px;
+    border-right: solid 2px $base-txt;
+    width: 50%;
+}
+
+.lineMargin {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .blockAccueil {
+        width: 700px;
+    }
+    h1 {
+        font-size: 113px;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 30px;}
+        p, li {
+            text-align: center;
+        }
+}
+
+// partie des services
+
+.blockService {
+    display: flex;
+    justify-content: center;
+    .blockPicture {
+        width: 50%;
+        display: flex; }
+        .blockTxt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%; }
+            h2 {
+                margin-bottom: 40px;}
+                p {
+                    display: flex;
+                    width: 50%;
+                    text-align: center; }
+                    button {
+                        padding: 10px;
+                        border-radius: 25px;
+                        width: 175px;
+                        border-color: $base-txt;
+                        margin-top: 40px; }
+                        button:hover {
+                            color: white;
+                            background-color: $base-txt; }
+}
+
+.block-picture-right {
+    padding-right: 50px;
+    justify-content: end;}
+.block-picture-left{
+    padding-left: 50px;
+    justify-content: start;}
+.block-txt-right {
+    padding-right: 250px;}
+.block-txt-left{
+    padding-left: 250px;}
+
