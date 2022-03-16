@@ -78,13 +78,27 @@
   <footer>
     <h2>Contactez-nous</h2>
     <form method="post" action="traitement.php">
-      <label for="Prénom">Prénom</label>
-      <input type="text" id="Prénom" name="prénom">
-      <label for="prez">Rédigez un message</label>
-      <textarea name="" id="prez" cols="30" rows="10"></textarea>
+      <div class="box-name-surname">
+        <div class="box-form">
+          <label for="Prénom">Prénom</label>
+          <input type="text" id="Prénom" name="prénom">
+        </div>
+        <div class="box-form">
+          <label for="Nomdefamille">Nom de famille</label>
+          <input type="text" id="Nomdefamille" name="Nomdefamille">
+        </div>
+      </div>
+      <div class="box-form">
+        <label for="mail">E-mail</label>
+        <input type="text" id="mail" name="mail">
+      </div>
+      <div class="box-txt">
+        <label for="text">Rédigez un message</label>
+        <textarea name="" id="text" cols="20" rows="10"></textarea>
+      </div>
+      <button>Envoyer</button>
     </form>
-    <p>Copyright 2022 © Tous droits réservés. Design by <a href="https://rymsa.fr">RYMSA</a></p>
+    <p>2022 ©  Integrate by <a href="https://rymsa.fr">rymsa</a></p>
   </footer>
 </body>
 </html>
-
