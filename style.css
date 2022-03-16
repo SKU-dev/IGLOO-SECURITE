@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
@@ -95,6 +96,7 @@ header li {
   width: 175px;
   border-color: #323232;
   margin-top: 40px;
+  background-color: white;
 }
 .blockService button:hover {
   color: white;
@@ -119,4 +121,66 @@ header li {
   padding-left: 250px;
 }
 
-/*# sourceMappingURL=style.css.map */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer form {
+  padding: 50px;
+}
+footer .box-form {
+  display: flex;
+  flex-direction: column;
+}
+footer .box-name-surname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+footer input[type=text], footer textarea[id=text] {
+  padding: 12px 20px;
+  border: none;
+  border-bottom: 2px #323232 solid;
+}
+footer input[id=mail] {
+  width: 500px;
+}
+footer input[id=Prénom], footer input[id=Nomdefamille] {
+  width: 220px;
+}
+footer .box-txt {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+footer textarea[id=text] {
+  width: 100%;
+  resize: none;
+}
+footer p {
+  text-align: center;
+  padding: 20px 20px;
+  background-color: #323232;
+  color: white;
+  width: 100%;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+footer button {
+  background-color: #323232;
+  padding: 10px;
+  border-radius: 25px;
+  width: 175px;
+  border-color: #323232;
+  margin-top: 40px;
+  color: white;
+}
+footer button:hover {
+  color: #323232;
+  background-color: white;
+}
