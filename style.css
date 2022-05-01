@@ -1,186 +1,322 @@
-@charset "UTF-8";
-*, ::before, ::after {
-  box-sizing: border-box;
+*, *::before, *::after {
   margin: 0;
-  padding: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
 header {
-  padding: 25px;
-  display: flex;
-  border-bottom: 6px #323232 solid;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border-bottom: 6px black solid;
   justify-content: space-between;
   align-items: center;
 }
+
 header img {
   max-width: 125px;
   object-fit: cover;
   background-repeat: no-repeat;
+  padding-left: 25px;
 }
-header ul {
+
+#ham-menu {
+  display: none;
+}
+label[for="ham-menu"] {
+  display: block;
+  position: fixed;
+  top: 24px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+.ham-menu {
+  width: 50vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  transform: translate(-110%);
+  z-index: 998;
+  background-color: white;
+  transition: 1s;
   display: flex;
-  margin-right: 50px;
+  justify-content: center;
+  align-items: center;
 }
+.ham-menu > ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  padding: 20px;
+  height: 50%;
+}
+.ham-menu > ul > li {
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  color: black;
+}
+
 header a {
   text-decoration: none;
-  color: #323232;
+  color: black;
   list-style-type: none;
-  margin-left: 50px;
-  padding: 5px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  font-size: xx-large;
 }
-header a:hover {
-  border-top: 1px solid #323232;
-  border-bottom: 1px solid #323232;
+
+#ham-menu:checked + label {
+  background-color: transparent;
+  border-color: black;
 }
-header li {
-  font-family: Georgia, "Times New Roman", Times, serif;
+#ham-menu:checked ~ div.ham-menu {
+  transform: translate(0px);
+  visibility: visible;
+}
+.full-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 997;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: 500ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#ham-menu:checked ~ div.full-page-green {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+[for="ham-menu"] > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+}
+.menu-line {
+  display: block;
+  width: 17px;
+  height: 2px;
+  margin: 10px 0 5px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color: black;
+  transition: 500ms;
+  transform-origin: right center;
+}
+[for="ham-menu"] > div > span:nth-child(4),
+[for="ham-menu"] > div > span:nth-child(5),
+[for="ham-menu"] > div > span:nth-child(6) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  transform-origin: left center;
+}
+#ham-menu:checked + label span {
+  background-color: black;
+}
+#ham-menu:checked + label span:nth-child(2),
+#ham-menu:checked + label span:nth-child(5) {
+  transform: scale(0);
+}
+#ham-menu:checked + label span:nth-child(1) {
+  transform: translateY(17px) rotate(45deg);
+}
+#ham-menu:checked + label span:nth-child(4) {
+  transform: translateY(17px) rotate(-45deg);
+}
+#ham-menu:checked + label span:nth-child(3) {
+  transform: translateY(-17px) rotate(-45deg);
+}
+#ham-menu:checked + label span:nth-child(6) {
+  transform: translateY(-17px) rotate(45deg);
+}
+.text {
+  font-size: 2.5rem;
+  line-height: 1.5em;
+  word-spacing: 0.5em;
+  letter-spacing: 0.1em;
+  font-family: "OpenSansCondensed-Bold", sans-serif;
+}
+.title {
+  font-size: 3rem;
+  line-height: 1.5em;
+  word-spacing: 0.5em;
+  letter-spacing: 0.1em;
+  font-family: "OpenSansCondensed-Bold", sans-serif;
+  padding: 10px;
+}
+.heading {
+  font-size: 6rem;
+  line-height: 1.5em;
+  word-spacing: 0.5em;
+  letter-spacing: 0.1em;
+  font-family: "Patua One";
+}
+.centre-text {
+  text-align: center;
+}
+.bold-text {
+  font-weight: bold;
 }
 
 .lineSeparation {
-  height: 250px;
-  border-right: solid 2px #323232;
-  width: 50%;
+height: 250px;
+border-right: solid 2px black;
+width: 50%;
 }
 
 .lineMargin {
-  margin-top: 40px;
-  margin-bottom: 40px;
+margin-top: 40px;
+margin-bottom: 40px;
 }
 
 .accueil {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 .accueil .blockAccueil {
-  width: 700px;
+width: 700px;
 }
 .accueil h1 {
-  font-size: 113px;
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 30px;
+font-size: 113px;
+text-align: center;
+font-style: italic;
+margin-bottom: 30px;
 }
 .accueil p, .accueil li {
-  text-align: center;
+text-align: center;
 }
 
 .blockService {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 .blockService .blockPicture {
-  width: 50%;
-  display: flex;
+width: 50%;
+display: flex;
 }
 .blockService .blockTxt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 50%;
 }
 .blockService h2 {
-  margin-bottom: 40px;
+margin-bottom: 40px;
 }
 .blockService p {
-  display: flex;
-  width: 50%;
-  text-align: center;
+display: flex;
+width: 50%;
+text-align: center;
 }
 .blockService button {
-  padding: 10px;
-  border-radius: 25px;
-  width: 175px;
-  border-color: #323232;
-  margin-top: 40px;
-  background-color: white;
+padding: 10px;
+border-radius: 25px;
+width: 175px;
+border-color: black;
+margin-top: 40px;
+background-color: white;
 }
 .blockService button:hover {
-  color: white;
-  background-color: #323232;
+color: white;
+background-color: black;
 }
 
 .block-picture-right {
-  padding-right: 50px;
-  justify-content: end;
+padding-right: 50px;
+justify-content: end;
 }
 
 .block-picture-left {
-  padding-left: 50px;
-  justify-content: start;
+padding-left: 50px;
+justify-content: start;
 }
 
 .block-txt-right {
-  padding-right: 250px;
+padding-right: 250px;
 }
 
 .block-txt-left {
-  padding-left: 250px;
+padding-left: 250px;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.formulaire {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
-footer form {
-  padding: 50px;
+.formulaire form {
+padding: 50px;
 }
-footer .box-form {
-  display: flex;
-  flex-direction: column;
+.formulaire .box-form {
+display: flex;
+flex-direction: column;
 }
-footer .box-name-surname {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 20px;
+.formulaire .box-name-surname {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding-bottom: 20px;
 }
-footer input[type=text], footer textarea[id=text] {
-  padding: 12px 20px;
-  border: none;
-  border-bottom: 2px #323232 solid;
+.formulaire input[type=text], .formulaire textarea[id=text] {
+padding: 12px 20px;
+border: none;
+border-bottom: 2px black solid;
 }
-footer input[id=mail] {
-  width: 500px;
+.formulaire input[id=mail] {
+width: 500px;
 }
-footer input[id=Prénom], footer input[id=Nomdefamille] {
-  width: 220px;
+.formulaire input[id=Prénom], .formulaire input[id=Nomdefamille] {
+width: 220px;
 }
-footer .box-txt {
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+.formulaire .box-txt {
+display: flex;
+flex-direction: column;
+padding-top: 20px;
 }
-footer textarea[id=text] {
-  width: 100%;
-  resize: none;
+.formulaire textarea[id=text] {
+width: 100%;
+resize: none;
 }
-footer p {
-  text-align: center;
-  padding: 20px 20px;
-  background-color: #323232;
-  color: white;
-  width: 100%;
+.formulaire p {
+text-align: center;
+padding: 20px 20px;
+background-color: black;
+color: white;
+width: 100%;
 }
-footer a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.formulaire a {
+text-decoration: none;
+color: white;
+font-weight: bold;
 }
-footer button {
-  background-color: #323232;
-  padding: 10px;
-  border-radius: 25px;
-  width: 175px;
-  border-color: #323232;
-  margin-top: 40px;
-  color: white;
+.formulaire button {
+background-color: black;
+padding: 10px;
+border-radius: 25px;
+width: 175px;
+border-color: black;
+margin-top: 40px;
+color: white;
 }
-footer button:hover {
-  color: #323232;
-  background-color: white;
+.formulaire button:hover {
+color: black;
+background-color: white;
 }
