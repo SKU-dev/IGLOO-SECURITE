@@ -5,22 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>IGLOO</title>
+  <title>IGLOO SECURITE</title>
 </head>
 <body>
-  <header>
-    <img src="Pictures/LOGO IGLOO.png" alt="Logo d'Igloo">
-    <nav>
-      <ul>
-        <a href="index.html"><li>Accueil</li></a>
-        <a href="service.html"><li>Services</li></a>
-        <a href="qui-sommes-nous/index.html"><li>Qui sommes nous</li></a>
-        <a href="devis.html"><li>Devis</li></a>
-        <a href="candidature.html"><li>Candidature</li></a>
-        <a href="video.html"><li>Vidéo</li></a>
-      </ul>
-    </nav>
-  </header>
+  <?php require('header.php'); ?>
   <div class="lineSeparation"></div>
   <section class="accueil">
     <div class="blockAccueil">
@@ -75,30 +63,30 @@
     </div>
   </section>
   <div class="lineSeparation lineMargin"></div>
-  <footer>
-    <h2>Contactez-nous</h2>
-    <form method="post" action="traitement.php">
-      <div class="box-name-surname">
-        <div class="box-form">
-          <label for="Prénom">Prénom</label>
-          <input type="text" id="Prénom" name="prénom">
+  <section class="formulaire">
+      <h2>Contactez-nous</h2>
+      <form method="post" action="traitement.php">
+        <div class="box-name-surname">
+          <div class="box-form">
+            <label for="Prénom">Prénom</label>
+            <input type="text" id="Prénom" name="prénom">
+          </div>
+          <div class="box-form">
+            <label for="Nomdefamille">Nom de famille</label>
+            <input type="text" id="Nomdefamille" name="Nomdefamille">
+          </div>
         </div>
         <div class="box-form">
-          <label for="Nomdefamille">Nom de famille</label>
-          <input type="text" id="Nomdefamille" name="Nomdefamille">
+          <label for="mail">E-mail</label>
+          <input type="text" id="mail" name="mail">
         </div>
-      </div>
-      <div class="box-form">
-        <label for="mail">E-mail</label>
-        <input type="text" id="mail" name="mail">
-      </div>
-      <div class="box-txt">
-        <label for="text">Rédigez un message</label>
-        <textarea name="" id="text" cols="20" rows="10"></textarea>
-      </div>
-      <button>Envoyer</button>
-    </form>
-    <p>2022 ©  Integrate by <a href="https://rymsa.fr">rymsa</a></p>
-  </footer>
+        <div class="box-txt">
+          <label for="text">Rédigez un message</label>
+          <textarea name="" id="text" cols="20" rows="10"></textarea>
+        </div>
+        <button>Envoyer</button>
+      </form>
+    </section>
+  <?php require('footer.php'); ?>
 </body>
 </html>
