@@ -1,0 +1,4 @@
+<footer>
+      <p>AUTORISATION CNAPS N° AUT-075-2119-05-22-20200737024 - ARTICLE L612- 14 DU CSI : L' AUTORISATION D' EXERCICE NE CONFERE AUCUNE PREROGATIVE DE PUISSANCE PUBLIQUE A L' ENTREPRISE OU AUX PERSONNES QUI EN BENIFICIENT</p>
+      <p><?php date("%Y"); ?> ©  Integrate by <a href="https://rymsa.fr">rymsa</a></p>
+    </footer>
